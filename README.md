@@ -1,6 +1,6 @@
 # Setup Instructions
 
-This project provides the backend API for the MicroCourses platform, built with Node.js, Express, and MongoDB.
+This project provides the frontend for the MicroCourses platform, built with React.
 
 ## Clone the Repository
 
