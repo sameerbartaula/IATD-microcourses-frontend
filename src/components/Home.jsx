@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getCourses } from "../services/api";
-import { Link } from "react-router-dom";
+import CourseCard from "./CourseCard";
+import "./home.css";
 
 function Home() {
   const [courses, setCourses] = useState([]);
@@ -12,17 +13,11 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="home">
       <h1>Courses</h1>
-      <ul>
+      <ul className="course-list">
         {courses.map((course) => (
-          <li key={course._id}>
-            <img src={course.image} alt={course.title} style={{ width: "100px" }} />
-            <h2>{course.title}</h2>
-            <p>{course.description}</p>
-            <p>Duration: {course.duration}</p>
-            <Link to={`/courses/${course._id}`}>View Details</Link>
-          </li>
+          <CourseCard key={course._id} course={course} />
         ))}
       </ul>
     </div>
